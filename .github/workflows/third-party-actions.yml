@@ -1,10 +1,10 @@
 name: third-party-actions
 
-# on:
-#   schedule:
-#     - cron: '* * * * *'
+on:
+  schedule:
+    - cron: '*/3 * * * *'
 
-on: push
+# on: push
 
 jobs:
   build:
