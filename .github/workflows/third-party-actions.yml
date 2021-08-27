@@ -12,14 +12,15 @@ jobs:
     steps:
       
       - name: checkout repo content
-        uses: actions/checkout@v2 
-      
+        uses: actions/checkout@v2
+
       - name: setup python
         uses: actions/setup-python@v2
         with:
           python-version: '3.9.6'
+      
+      - name: install python packages
+        run: pip install PyGithub
 
-      - name: execute py script 
-        # env:
-        #   TEST_SECRET: ${{ secrets.TEST_SECRET }}
-        run: python main.py ${{ secrets.TEST_SECRET }}
+      - name: execute python script 
+        run: python main.py ${{ secrets.TEST_TOKEN }}
