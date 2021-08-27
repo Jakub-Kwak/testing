@@ -38,7 +38,7 @@ jobs:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_USERNAME: GHA-BOT
-          SLACK_CHANNEL: test
+          SLACK_CHANNEL: random
           SLACK_TITLE: GHA check ${{ job.status }}
           SLACK_MESSAGE: |
             <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Actions URL>
