@@ -30,3 +30,19 @@ jobs:
         with:
           name: repos
           path: repos.csv
+       
+      - name: notify slack
+        if: always()
+        uses: rtCamp/action-slack-notify@v2.1.3
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_USERNAME: GHA-BOT
+          SLACK_CHANNEL: test
+          SLACK_TITLE: GHA check ${{ job.status }}
+          SLACK_MESSAGE: |
+            <https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}|Actions URL>
+          MSG_MINIMAL: true
+          SLACK_ICON: https://avatars.slack-edge.com/2021-05-17/2068859221653_526c61e414df90dd67f7_192.png
+          SLACK_FOOTER: ''
+      
