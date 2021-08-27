@@ -20,4 +20,6 @@ jobs:
           python-version: '3.9.6'
 
       - name: execute py script 
-        run: python main.py
+        # env:
+        #   TEST_SECRET: ${{ secrets.TEST_SECRET }}
+        run: python main.py ${{ secrets.TEST_SECRET }}
