@@ -24,3 +24,9 @@ jobs:
 
       - name: execute python script 
         run: python main.py ${{ secrets.TEST_TOKEN }}
+
+      - name: upload csv file
+        uses: actions/upload-artifact@v2
+        with:
+          name: repos
+          path: repos.csv
