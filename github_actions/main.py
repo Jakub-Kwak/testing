@@ -9,6 +9,7 @@ repos = g.get_user("jakub-qak").get_repos()
 repos_list = [repo.name for repo in repos]
 print(repos_list)
 print(len(repos_list))
+print("test")
 
 with open("repos.csv", "w", newline="") as csv_file:
     writer = csv.writer(csv_file)
