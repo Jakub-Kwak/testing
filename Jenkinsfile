@@ -1,4 +1,5 @@
-  post {
+  moja zmiana {
     always {
       script {
-        sendBuildData(currentBuild)
+        moja zmiana
+xxxx
