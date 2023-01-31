@@ -4,7 +4,7 @@ name: third-party-actions
 #   schedule:
 #     - cron: '*/3 * * * *'
 
-on: push
+on: repository_dispatch
 
 jobs:
   build:
