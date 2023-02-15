@@ -31,6 +31,9 @@ jobs:
         echo "Checking cache status..."
         npm cache verify
 
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+
     - name: Overwrite ACTIONS_CACHE_URL
       uses: actions/github-script@v6
       with:
