@@ -42,3 +42,14 @@ jobs:
 
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
+
+    - name: Wait for 15 seconds
+      run: sleep 15s
+
+    - name: ACTIONS_CACHE_URL
+      run: echo $ACTIONS_CACHE_URL
+
+    - name: Print environment variables
+      run: |
+        echo "All environment variables:"
+        env
