@@ -30,4 +30,12 @@ jobs:
 
         echo "Checking cache status..."
         npm cache verify
-#test run
+
+    - name: Overwrite ACTIONS_CACHE_URL
+      uses: actions/github-script@v6
+      with:
+        script: |
+          core.exportVariable('ACTIONS_CACHE_URL', 'my_url');
+    
+    - name: Print ACTIONS_CACHE_URL
+      run: echo "ACTIONS_CACHE_URL is set to $ACTIONS_CACHE_URL"
